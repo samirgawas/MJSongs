@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="app.samir.com.mjsongs.ResultDetailActivity">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:dividerHeight="1dp"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        tools:ignore="UselessLeaf">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            tools:ignore="UselessLeaf">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:text="Track Name"
+                />
+
+            <TextView
+                android:id="@+id/track_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            tools:ignore="UselessLeaf">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:text="Artist Name"/>
+
+            <TextView
+                android:id="@+id/artist_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            tools:ignore="UselessLeaf">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:text="Track Censor Name"/>
+
+            <TextView
+                android:id="@+id/track_censor_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            tools:ignore="UselessLeaf">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:text="Collection Name"/>
+
+            <TextView
+                android:id="@+id/collection_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            tools:ignore="UselessLeaf">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:text="Collection Price"/>
+
+            <TextView
+                android:id="@+id/collection_price"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            tools:ignore="UselessLeaf">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:text="Release Date"/>
+
+            <TextView
+                android:id="@+id/release_date"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            tools:ignore="UselessLeaf">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:text="Currency"/>
+
+            <TextView
+                android:id="@+id/currency"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
