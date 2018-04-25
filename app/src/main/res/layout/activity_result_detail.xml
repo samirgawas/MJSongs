@@ -161,10 +161,10 @@
                 android:layout_weight="1"
                 android:gravity="end"
                 android:layout_height="wrap_content"
-                android:text="Release Date"/>
+                android:text="Track Price"/>
 
             <TextView
-                android:id="@+id/release_date"
+                android:id="@+id/track_price"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"

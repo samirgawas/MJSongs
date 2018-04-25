@@ -1,6 +1,7 @@
 package app.samir.com.mjsongs;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,7 +20,7 @@ public class ResultDetailActivity extends AppCompatActivity {
     private TextView textView_artistName;
     private TextView textView_ccollectionPrice;
     private TextView textView_collectionName;
-    private TextView textView_releaseDate;
+    private TextView textView_trackPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +35,6 @@ public class ResultDetailActivity extends AppCompatActivity {
 
             Result result = getIntent().getParcelableExtra("result");
 
-
-
-           // imageView_artworkUrl100.setImageResource(0);
             new LoadImage().execute(result.getArtworkUrl100());
 
             textView_trackName.setText(result.getTrackName());
@@ -44,7 +42,7 @@ public class ResultDetailActivity extends AppCompatActivity {
             textView_artistName.setText(result.getArtistName());
             textView_ccollectionPrice.setText(String.format("$ %s", String.valueOf(result.getCollectionPrice())));
             textView_collectionName.setText(result.getCollectionName());
-            textView_releaseDate.setText(result.getReleaseDate());
+            textView_trackPrice.setText(String.valueOf(String.format("$ %s", String.valueOf(result.getTrackPrice()))));
         }
 
     }
@@ -57,7 +55,7 @@ public class ResultDetailActivity extends AppCompatActivity {
         textView_artistName  = findViewById(R.id.artist_name);
         textView_ccollectionPrice  = findViewById(R.id.collection_price);
         textView_collectionName  = findViewById(R.id.collection_name);
-        textView_releaseDate  = findViewById(R.id.release_date);
+        textView_trackPrice = findViewById(R.id.track_price);
     }
 
     private class LoadImage extends AsyncTask<String, Void, Bitmap>{
@@ -73,6 +71,8 @@ public class ResultDetailActivity extends AppCompatActivity {
             super.onPostExecute(bitmap);
             if(bitmap != null){
                 imageView_artworkUrl100.setImageBitmap(bitmap);
+            }else{
+                imageView_artworkUrl100.setImageDrawable(getResources().getDrawable(R.drawable.ic_launcher_background));
             }
 
         }
