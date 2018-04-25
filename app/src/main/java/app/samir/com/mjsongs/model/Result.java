@@ -1,10 +1,9 @@
 package app.samir.com.mjsongs.model;
 
-/**
- * Created by samir on 24-04-2018.
- */
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Result {
+public class Result implements Parcelable {
 
     private String wrapperType;
     private String kind;
@@ -37,6 +36,141 @@ public class Result {
     private String currency;
     private String primaryGenreName;
     private boolean isStreamable;
+
+    @Override
+    public int describeContents() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    /**
+     * Storing the Student data to Parcel object
+     **/
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+        dest.writeString(wrapperType);
+        dest.writeString(kind);
+        dest.writeLong(artistId);
+        dest.writeLong(collectionId);
+        dest.writeLong(trackId);
+        dest.writeString(artistName);
+        dest.writeString(collectionName);
+        dest.writeString(trackName);
+        dest.writeString(collectionCensoredName);
+        dest.writeString(trackCensoredName);
+        dest.writeString(artistViewUrl);
+        dest.writeString(collectionViewUrl);
+        dest.writeString(trackViewUrl);
+        dest.writeString(previewUrl);
+        dest.writeString(artworkUrl30);
+        dest.writeString(artworkUrl60);
+        dest.writeString(artworkUrl100);
+        dest.writeDouble(collectionPrice);
+        dest.writeDouble(trackPrice);
+        dest.writeString(releaseDate);
+        dest.writeString(collectionExplicitness);
+        dest.writeString(trackExplicitness);
+        dest.writeInt(discCount);
+        dest.writeInt(discNumber);
+        dest.writeInt(trackCount);
+        dest.writeInt(trackNumber);
+        dest.writeLong(trackTimeMillis);
+        dest.writeString(country);
+        dest.writeString(currency);
+        dest.writeString(primaryGenreName);
+        dest.writeByte((byte) (isStreamable ? 1 : 0));
+    }
+
+    /**
+     * A constructor that initializes the Student object
+     **/
+    public Result(String wrapperType, String kind, long artistId, long collectionId, long trackId, String artistName, String collectionName, String trackName, String collectionCensoredName, String trackCensoredName, String artistViewUrl, String collectionViewUrl, String trackViewUrl, String previewUrl, String artworkUrl30, String artworkUrl60, String artworkUrl100, double collectionPrice, double trackPrice, String releaseDate, String collectionExplicitness, String trackExplicitness, int discCount, int discNumber, int trackCount, int trackNumber, long trackTimeMillis, String country, String currency, String primaryGenreName, boolean isStreamable) {
+        this.wrapperType = wrapperType;
+        this.kind = kind;
+        this.artistId = artistId;
+        this.collectionId = collectionId;
+        this.trackId = trackId;
+        this.artistName = artistName;
+        this.collectionName = collectionName;
+        this.trackName = trackName;
+        this.collectionCensoredName = collectionCensoredName;
+        this.trackCensoredName = trackCensoredName;
+        this.artistViewUrl = artistViewUrl;
+        this.collectionViewUrl = collectionViewUrl;
+        this.trackViewUrl = trackViewUrl;
+        this.previewUrl = previewUrl;
+        this.artworkUrl30 = artworkUrl30;
+        this.artworkUrl60 = artworkUrl60;
+        this.artworkUrl100 = artworkUrl100;
+        this.collectionPrice = collectionPrice;
+        this.trackPrice = trackPrice;
+        this.releaseDate = releaseDate;
+        this.collectionExplicitness = collectionExplicitness;
+        this.trackExplicitness = trackExplicitness;
+        this.discCount = discCount;
+        this.discNumber = discNumber;
+        this.trackCount = trackCount;
+        this.trackNumber = trackNumber;
+        this.trackTimeMillis = trackTimeMillis;
+        this.country = country;
+        this.currency = currency;
+        this.primaryGenreName = primaryGenreName;
+        this.isStreamable = isStreamable;
+    }
+
+    /**
+     * Retrieving Student data from Parcel object
+     * This constructor is invoked by the method createFromParcel(Parcel source) of
+     * the object CREATOR
+     **/
+    private Result(Parcel in){
+
+        this.wrapperType = in.readString();
+        this.kind = in.readString();
+        this.artistId = in.readLong();
+        this.collectionId = in.readLong();
+        this.trackId = in.readLong();
+        this.artistName = in.readString();
+        this.collectionName = in.readString();
+        this.trackName = in.readString();
+        this.collectionCensoredName = in.readString();
+        this.trackCensoredName = in.readString();
+        this.artistViewUrl = in.readString();
+        this.collectionViewUrl = in.readString();
+        this.trackViewUrl = in.readString();
+        this.previewUrl = in.readString();
+        this.artworkUrl30 = in.readString();
+        this.artworkUrl60 = in.readString();
+        this.artworkUrl100 = in.readString();
+        this.collectionPrice = in.readDouble();
+        this.trackPrice = in.readDouble();
+        this.releaseDate = in.readString();
+        this.collectionExplicitness = in.readString();
+        this.trackExplicitness = in.readString();
+        this.discCount = in.readInt();
+        this.discNumber = in.readInt();
+        this.trackCount = in.readInt();
+        this.trackNumber = in.readInt();
+        this.trackTimeMillis = in.readInt();
+        this.country = in.readString();
+        this.currency = in.readString();
+        this.primaryGenreName = in.readString();
+        this.isStreamable = in.readByte() != 0;
+    }
+
+    public static final Parcelable.Creator<Result> CREATOR = new Parcelable.Creator<Result>() {
+
+        @Override
+        public Result createFromParcel(Parcel source) {
+            return new Result(source);
+        }
+
+        @Override
+        public Result[] newArray(int size) {
+            return new Result[size];
+        }
+    };
 
     public String getWrapperType() {
         return wrapperType;

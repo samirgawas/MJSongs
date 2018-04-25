@@ -3,9 +3,11 @@ package app.samir.com.mjsongs;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
@@ -13,6 +15,8 @@ import java.net.URL;
  */
 
 public class Utils {
+
+    private static final String TAG = "Utils";
 
     public static String loadJSONFromAsset(Context context) {
         String json = null;
@@ -31,15 +35,20 @@ public class Utils {
     }
 
 
-    public static Bitmap getBitMapFromUrl(String s){
-        Bitmap image = null;
+    public static Bitmap getBitMapFromUrl(String src) {
+        Bitmap bitmap= null;
         try {
-            URL url = new URL(s);
-            image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-        } catch(IOException e) {
-            System.out.println(e);
+            URL url = new URL(src);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setDoInput(true);
+            connection.connect();
+            InputStream input = connection.getInputStream();
+            bitmap = BitmapFactory.decodeStream(input);
+        } catch (IOException e) {
+            Log.e(TAG, "getBitMapFromUrl: " + e.toString());
         }
-        return image;
+        return bitmap;
     }
+
 
 }
